@@ -53,7 +53,7 @@ Released   : 20131006
   <label for="">Enter Target K/D(No "/"): </label><input type="textbox" name="KD"><br>
 <label for="">Enter Current Kills(no comma's): </label><input type="textbox" name="Kills"><br>
 <label for="">Enter Current Deaths(no comma's): </label><input type="textbox" name="Deaths"><br>
-<button onClick="add()">Submit</button><br>
+<button type="button">Hide/Show onClick="add()">Submit</button><br>
 <label for="displayValue2">Kills Needed to Reach Target K/D:</label>
 <input type="textbox" name="display">
 			<script type="text/javascript">
@@ -62,7 +62,8 @@ Released   : 20131006
       var Kills =parseInt(document.getElementsByName('Kills')[0].value);
       var Deaths =parseInt(document.getElementsByName('Deaths')[0].value);
       var result = (KD*Deaths)-Kills;
-      document.getElementsByName('display')[0].value= result;
+      document.getElementsByName('display')[0].value= result; onsubmit="return false"
+});
    }
 </script>
 		  
