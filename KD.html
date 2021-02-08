@@ -11,17 +11,8 @@ Released   : 20131006
 
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><script type="text/javascript">
-	window.onload = function () {
-  document.getElementById("kdkdkd").onsubmit = function add() {
-var KD = document.getElementById("KD").value;
-var Kills = document.getElementById("kills").value;
-var Deaths = document.getElementById("Deaths").value;
-
-var total = (KD * Deaths) - Kills;
-	document.getElementsByName('display')[0].value= total;
-  }
-</script>
+<head><script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <meta name="keywords" content="" />
@@ -55,14 +46,26 @@ var total = (KD * Deaths) - Kills;
 <div id="wrapper3">
 	<div id="portfolio" class="container">
 		<div class="title">
+			<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		  <h2>Target K/D Calculator</h2>
-<form id="form1">
-  Enter Target K/D(No "/"): <input type="int" id="KD"><br>
-  Enter Current Kills(no comma's): <input type="int" id="Kills"><br>
-  Enter Current Deaths(no comma's): <input type="int" id="Deaths"><br>
-  <button onClick="add()">Submit</button>
-</form>
-		  <p><center>  Kills Needed to Reach Target K/D:<label for="totalValue"> </label><input type="textbox" name="display"></center></p>
+  <label for="">Enter Target K/D(No "/"): </label><input type="textbox" name="KD"><br>
+<label for="">Enter Current Kills(no comma's): </label><input type="textbox" name="Kills"><br>
+<label for="">Enter Current Deaths(no comma's): </label><input type="textbox" name="Deaths"><br>
+<button onClick="add()">Submit</button><br>
+<label for="displayValue2">Kills Needed to Reach Target K/D:</label>
+<input type="textbox" name="display">
+			<script type="text/javascript">
+  function add() {
+      var KD = parseInt(document.getElementsByName('KD')[0].value);
+      var Kills =parseInt(document.getElementsByName('Kills')[0].value);
+      var Deaths =parseInt(document.getElementsByName('Deaths')[0].value);
+      var result = (KD*Deaths)-Kills;
+      document.getElementsByName('display')[0].value= result;
+   }
+</script>
+		  
   </div>
   
   <p id="output"></p>
