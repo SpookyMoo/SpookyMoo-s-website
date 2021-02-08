@@ -11,7 +11,8 @@ Released   : 20131006
 
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head><script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <meta name="keywords" content="" />
@@ -45,26 +46,35 @@ Released   : 20131006
 <div id="wrapper3">
 	<div id="portfolio" class="container">
 		<div class="title">
-		  <h2>Spooky's Tools</h2>
-		  <span class="byline">:)</span></div>
-		<div class="column1"> </div>
-		<div class="column2"> </div>
+		  <h2>Target K/D Calculator</h2>
+<form id="form1">
+  Enter Target K/D(No "/"): <input type="int" name="KD"><br>
+  Enter Current Kills(no comma's): <input type="int" name="Kills"><br>
+  Enter Current Deaths(no comma's): <input type="int" name="Deaths"><br>
+  <button onClick="add()">Submit</button>
+</form>
+			<script type="text/javascript">
+  function add() {
+var KD = parseInt(document.getElementByName("KD")[0].value);
+var Kills = parseInt(document.getElementByName("kills")[0].value);
+var Deaths = parseInt(document.getElementByName("Deaths")[0].value);
+
+var total = (KD*Deaths)-Kills;
+	document.getElementsByName('display')[0].value= total;
+  }
+</script>
+		  <p><center>  Kills Needed to Reach Target K/D:<label for="displayValue"> </label><input type="textbox" name="display"></center></p>
+  </div>
+  
+  <p id="output"></p>
+		</div>
+<div class="column2"> </div>
 		<div class="column3"> </div>
 		<div class="column4"> </div>
 	</div>
-</div>
-<div id="wrapper1">
-	<div id="welcome" class="container">
-		<div class="title">
-		  <h2>&nbsp;</h2>
-	     </div>
-		<div class="content">
-		  <p>Blah</p>
-</div>
-	</div>
-</div><div id="wrapper2"> </div>
+<div id="wrapper2"> </div>
 <div id="copyright">
-  <p>&copy; Spooky. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+  <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 </div>
 </body>
 </html>
